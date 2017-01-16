@@ -18,7 +18,7 @@ router.post("/register", function(req, res) {
     User.register(newUser, req.body.password, function(err, user){
         if(err){
           
-            req.flash("error", err.message);
+            // req.flash("error", err.message);
             return res.render("register")
         }
         passport.authenticate("local")(req,res,function(){
@@ -29,7 +29,7 @@ router.post("/register", function(req, res) {
 })
 //=======login routes=======
 router.get("/login",function(req, res) {
-    req.flash("error", "Please Login First!!")
+    // req.flash("error", "Please Login First!!")
     res.render("login")
 });
 router.post("/login", passport.authenticate("local",{
