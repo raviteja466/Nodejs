@@ -15,7 +15,7 @@ router.get("/register", function(req, res) {
 });
 router.post("/register", function(req, res) {
     if (req.body.password !== req.body.password2) {
-        req.flash("error", "Password's do not match");
+        req.flash("error", "Password Do Not Match!!");
         res.redirect('/register');
     }else {
     var newUser = new User({username: req.body.username})
