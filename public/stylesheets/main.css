@@ -5,6 +5,7 @@
 .thumbnail {
     padding: 0;
 }
+.img-responsive {display:block; width:auto; height: 100px; }
 
 .thumbnail .caption-full{
     padding: 9px;

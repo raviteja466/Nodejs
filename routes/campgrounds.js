@@ -31,7 +31,7 @@ router.post("/",middleware.isLoggedIn, function(req, res){
         if(err){
             console.log(err);
         } else {
-            console.log(newlyCreated)
+            // console.log(newlyCreated)
             //redirect back to campgrounds page
             res.redirect("/campgrounds");
         }
@@ -75,6 +75,11 @@ router.put("/:id",middleware.checkCampgroundOwnership, function(req,res){
 //delete
 router.delete("/:id",middleware.checkCampgroundOwnership, function(req, res) {
     Campground.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            res.redirect("/login")
+        }else{
+            res.redirect("/campgrounds")
+        }
     })
 })
 
